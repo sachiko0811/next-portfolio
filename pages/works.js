@@ -1,8 +1,15 @@
+import { motion } from 'framer-motion'
+
 import PageHeader from "../widgets/PageHeader"
 
 const Work = () => {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ ease: "easeOut", duration: 1 }}
+    >
     <PageHeader />
 
     <div className="border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
@@ -18,7 +25,7 @@ const Work = () => {
       </div>
     </div>
     
-    </div>
+    </motion.div>
   )
 }
 

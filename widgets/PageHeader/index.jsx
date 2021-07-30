@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
+
 const variants = {
   open: { opacity: 1, x: 0 },
   closed: { opacity: 0, x: "-100%" },
@@ -31,7 +32,13 @@ const PageHeader = () => {
             active ? '' : 'hidden'
           }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
         > */}
-          <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex lg:h-auto'>
+          <motion.div 
+            className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex lg:h-auto'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ ease: "easeOut", duration: 1 }}
+          >
             <Link href='/works'>
               <a className='text-sm lg:inline-flex lg:w-auto w-full px-3 py-2 rounded items-center justify-center hover:underline'>
                 WORKS
@@ -66,7 +73,7 @@ const PageHeader = () => {
               </a>
             </Link> */}
           </div>
-        </div>
+        </motion.div>
         </div>
       </nav>
     </>

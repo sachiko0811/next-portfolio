@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { 
   faGithub,
@@ -14,7 +16,12 @@ import PageHeader from "../widgets/PageHeader"
 
 const Contacts = () => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ ease: "easeOut", duration: 1 }}
+    >
     <PageHeader />
     <div className="space-x-4">
       <h1>Contacts</h1>
@@ -30,7 +37,7 @@ const Contacts = () => {
         <FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon>
         </div>
     </div>
-    </>
+    </motion.div>
   )
 }
 
